@@ -1,10 +1,29 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import Layout from '../components/Layout';
+import { graphql } from 'gatsby';
 
-const Contact = () => {
+import Layout from '../components/Layout';
+import ContactForm from '../components/Contact/ContactForm';
+import StyledHero from '../components/StyledHero';
+
+export const query = graphql`
+	query {
+		contactBcg: file(relativePath: {eq: "connectBcg.jpeg"}) {
+			childImageSharp {
+				fluid(quality: 90, maxWidth: 4160) {
+					...GatsbyImageSharpFluid_withWebp
+				}
+			}
+		}
+	}
+`;
+
+const Contact = ({ data }) => {
 	return (
 		<Layout>
-			<div>Hello Contact!</div>
+			<StyledHero img={data.contactBcg.childImageSharp.fluid}></StyledHero> 
+			
+			<ContactForm />
 		</Layout>
 	);
 };

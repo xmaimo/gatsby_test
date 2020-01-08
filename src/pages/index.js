@@ -1,20 +1,37 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import { Link } from 'gatsby';
+import { graphql } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import Layout from '../components/Layout';
-import SimpleHero from '../components/SimpleHero';
+import StyledHero from '../components/StyledHero';
 import Banner from '../components/Banner';
 import AboutModule from '../components/Home/About';
 import ServiceModule from '../components/Home/Services';
 
-const Home = () => {
+export const query = graphql`
+	query {
+		defaultBcg: file(relativePath: {eq: "defaultBcg.jpeg"}) {
+			childImageSharp {
+				fluid(quality: 90, maxWidth: 4160) {
+					...GatsbyImageSharpFluid_withWebp
+				}
+			}
+		}
+	}
+`;
+
+const Home = ({ data }) => {
 	return (
 		<Layout>
-			<SimpleHero>
+			<StyledHero 
+				home='true'
+				img={data.defaultBcg.childImageSharp.fluid}
+			>
 				<Banner title='continue exploring' info='Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, dolorum!'>
-					<Link to='/tours' className='btn-white'>explore tours</Link>
+					<AniLink fade to='/tours' className='btn-white'>explore tours</AniLink>
 				</Banner>
-			</SimpleHero> 
+			</StyledHero> 
 
 			<AboutModule />
 			<ServiceModule />
