@@ -45,7 +45,7 @@ function FeaturedTours() {
 				}
 			</div>
       
-			<AniLink fade to='/tours' className='btn-primary'>all tours</AniLink>
+			<AniLink fade to='/tours-page' className='btn-primary'>all tours</AniLink>
 		</section>
 	);
 }

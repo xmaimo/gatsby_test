@@ -33,7 +33,7 @@ const Home = ({ data }) => {
 				img={data.defaultBcg.childImageSharp.fluid}
 			>
 				<Banner title='continue exploring' info='Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, dolorum!'>
-					<AniLink fade to='/tours' className='btn-white'>explore tours</AniLink>
+					<AniLink fade to='/tours-page' className='btn-white'>explore tours</AniLink>
 				</Banner>
 			</StyledHero> 
 
