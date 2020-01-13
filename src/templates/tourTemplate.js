@@ -56,7 +56,7 @@ function tourTemplate({ data }) {
 							})
 						}
 					</div>
-					<AniLink fade to='tours' className='btn-primary'>back to tours</AniLink>
+					<AniLink fade to='/tours-page' className='btn-primary'>back to tours</AniLink>
 				</div>
 			</section>
 		</Layout>

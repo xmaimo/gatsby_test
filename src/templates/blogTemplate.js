@@ -51,7 +51,7 @@ function blogTemplate({ data }) {
 						{documentToReactComponents(json, options)}
 					</article>
 
-					<AniLink fade to='/blog' className='btn-primary'>all posts</AniLink>
+					<AniLink fade to='/blog-page' className='btn-primary'>all posts</AniLink>
 				</div>
 			</section>
 		</Layout>
