@@ -8,6 +8,8 @@ import StyledHero from '../components/StyledHero';
 import Banner from '../components/Banner';
 import AboutModule from '../components/Home/About';
 import ServiceModule from '../components/Home/Services';
+import FeaturedTours from '../components/Home/FeaturedTours';
+import Seo from '../components/Seo';
 
 export const query = graphql`
 	query {
@@ -24,6 +26,8 @@ export const query = graphql`
 const Home = ({ data }) => {
 	return (
 		<Layout>
+			<Seo title='Home' />
+
 			<StyledHero 
 				home='true'
 				img={data.defaultBcg.childImageSharp.fluid}
@@ -35,6 +39,7 @@ const Home = ({ data }) => {
 
 			<AboutModule />
 			<ServiceModule />
+			<FeaturedTours />
 		</Layout>
 	);
 };

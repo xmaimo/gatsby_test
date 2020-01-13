@@ -4,14 +4,16 @@ import Title from '../Title';
 import styles from '../../css/contact.module.css';
 
 const ContactForm = () => {
-
-
 	return (
 		<section className={styles.contact}>
 			<Title title='contact' subTitle='us' />
 
 			<div className={styles.center}>
-				<form className={styles.form} action="">
+				<form 
+					className={styles.form} 
+					action="https://formspree.io/xmaimo77@yahoo.es"
+  				method="POST"
+				>
 					<div>
 						<label htmlFor="name">Name</label>
 						<input type="text" name='name' id='name' placeholder='john smith' className={styles.formControl}/>

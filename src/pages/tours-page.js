@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import StyledHero from '../components/StyledHero';
+import Tours from '../components/Tours/Tours';
 
 export const query = graphql`
 	query {
@@ -17,16 +18,18 @@ export const query = graphql`
 	}
 `;
 
-class Tours extends Component {
+class tours extends Component {
 	render() {
 		const { fluid }=this.props.data.defaultBcg.childImageSharp;
 		
 		return (
 			<Layout>
 				<StyledHero img={fluid}></StyledHero> 
+
+				<Tours />
 			</Layout>
 		);
 	}
 }
 
-export default Tours;
+export default tours;
