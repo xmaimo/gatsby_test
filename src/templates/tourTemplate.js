@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import { FaMoneyBillWave, FaMap } from 'react-icons/fa';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import StyledHero from '../components/StyledHero';
 import Day from '../components/SingleTour/Day';
 import styles from '../css/template.module.css';

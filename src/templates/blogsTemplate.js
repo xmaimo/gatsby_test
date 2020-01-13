@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
 
 import Title from '../components/Title';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Blog from '../components/Blog/Blog';
 import styles from '../css/blog.module.css';
 import Seo from '../components/Seo';
