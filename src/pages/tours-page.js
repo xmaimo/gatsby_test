@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import StyledHero from '../components/StyledHero';
 import Tours from '../components/Tours/Tours';
+import Seo from '../components/Seo';
 
 export const query = graphql`
 	query {
@@ -24,6 +25,7 @@ class tours extends Component {
 		
 		return (
 			<Layout>
+				<Seo title='Tours' />
 				<StyledHero img={fluid}></StyledHero> 
 
 				<Tours />

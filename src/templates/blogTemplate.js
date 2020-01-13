@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
 import styles from '../css/single-blog.module.css';
+import Seo from '../components/Seo';
 
 function blogTemplate({ data }) {
 	const { title, published, text:{ json } } = data.post;
@@ -39,6 +40,8 @@ function blogTemplate({ data }) {
   
 	return (
 		<Layout>
+			<Seo title={title} />
+
 			<section className={styles.blog}>
 				<div className={styles.center}>
 					<h1>{title}</h1>

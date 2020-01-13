@@ -10,13 +10,16 @@ import Layout from '../components/layout';
 import StyledHero from '../components/StyledHero';
 import Day from '../components/SingleTour/Day';
 import styles from '../css/template.module.css';
+import Seo from '../components/Seo';
 
 function tourTemplate({ data }) {
-	const { id, name, price, country, days, start, journey, description:{ description }, images } = data.contentfulTour;
+	const { name, price, country, days, start, journey, description:{ description }, images } = data.contentfulTour;
 	const [ mainImage, ...otherImgs ] = images;
 
 	return (
 		<Layout>
+			<Seo title={name} />
+			
 			<StyledHero
 				img={mainImage.fluid}
 			/>
@@ -24,9 +27,9 @@ function tourTemplate({ data }) {
 				<div className={styles.center}>
 					<div className={styles.images}>
 						{
-							otherImgs.map(({ fluid }) => {
+							otherImgs.map(({ fluid }, i) => {
 								return (
-									<Img classname={styles.image} key={id} fluid={fluid} alt={name} />
+									<Img classname={styles.image} key={i} fluid={fluid} alt={name} />
 								);
 							})
 						}
@@ -67,6 +70,7 @@ tourTemplate.propTypes = {
 export const query = graphql`
 	query ($slug: String!) {
 		contentfulTour(slug: {eq: $slug}) {
+			id:contentful_id
 			name
 			price
 			country

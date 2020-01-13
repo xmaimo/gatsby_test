@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import ContactForm from '../components/Contact/ContactForm';
 import StyledHero from '../components/StyledHero';
+import Seo from '../components/Seo';
 
 export const query = graphql`
 	query {
@@ -21,6 +22,7 @@ export const query = graphql`
 const Contact = ({ data }) => {
 	return (
 		<Layout>
+			<Seo title='Contact Page' />
 			<StyledHero img={data.contactBcg.childImageSharp.fluid}></StyledHero> 
 			
 			<ContactForm />

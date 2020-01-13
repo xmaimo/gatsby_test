@@ -8,10 +8,9 @@ import Title from '../components/Title';
 import Layout from '../components/layout';
 import Blog from '../components/Blog/Blog';
 import styles from '../css/blog.module.css';
+import Seo from '../components/Seo';
 
 function blogsTemplate(props) {
-	console.log(props);
-  
 	const { data } = props;
 	const { currentPage, numPages } = props.pageContext;
 	const isFirst = currentPage === 1;
@@ -20,6 +19,7 @@ function blogsTemplate(props) {
 	const nextPage = `/blogs/${ currentPage + 1 }`;
 	return (
 		<Layout>
+			<Seo title='Blogs' />
 			<section className={styles.blog}>
 				<Title title='latest' subTitle='posts' />
         
