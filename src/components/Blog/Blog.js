@@ -11,7 +11,7 @@ function Blog({ blog }) {
 	return (
 		<article className={styles.blog}>
 			<div className={styles.imgContainer}>
-				<Img fluid={image.fluid} className={styleMedia.img} alt={title} />
+				<Img fluid={image.fluid} className={styles.img} alt={title} />
 				<AniLink fade className={styles.link} to={`/blog/${ slug }`}>read more</AniLink>
 
 				<h6 className={styles.date}>{published}</h6>
