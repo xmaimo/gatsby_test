@@ -4,11 +4,11 @@ export default [
 		text: 'home',
 	},
 	{
-		path: '/tours',
+		path: '/tours-page',
 		text: 'tours',
 	},
 	{
-		path: '/blog',
+		path: '/blog-page',
 		text: 'blog',
 	},
 	{
